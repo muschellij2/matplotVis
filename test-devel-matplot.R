@@ -9,7 +9,8 @@ matplotVis <- function(data, ..., plot.title="myplot", plot=TRUE, gaeDevel=TRUE,
   nr <- nrow(data)
   cn <- colnames(data)
   ll <- vector("list", length=nr)
-  for (irow in 1:nr) ll[[irow]] <- sapply(data[irow,], as.character)
+  #   for (irow in 1:nr) ll[[irow]] <- sapply(data[irow,], as.character)
+  for (irow in 1:nr) ll[[irow]] <- data[irow,]
   
   dropouts <- cn[classes != "numeric"]
   n <- sum(classes=="numeric")
